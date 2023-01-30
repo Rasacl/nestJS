@@ -1,20 +1,12 @@
-<!--
- * @Author: chenxiao chenxiao@uino.com
- * @Date: 2022-11-19 14:26:23
- * @LastEditors: chenxiao chenxiao@uino.com
- * @LastEditTime: 2022-11-19 14:57:12
- * @FilePath: \nestJS\nestxiaomi\views\admin\public\page_aside.ejs
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <ul class="aside">
          		
     <li>
-        <h4>编辑管理员</h4>
+        <h4>增加管理员</h4>
         
         <ul>
-            <li  class="list-group-item"> <a target="rightMain" href="/admin/manger"> 管理员列表</a></li>
+            <li  class="list-group-item"> <a target="rightMain" href="/<%=config.adminPath%>/manager"> 管理员列表</a></li>
             
-            <li class="list-group-item"> <a target="rightMain" href="/admin/manger/add">增加管理员</a></li>
+            <li class="list-group-item"> <a  target="rightMain" href="/<%=config.adminPath%>/manager/add">增加管理员</a></li>
         </ul>
     </li>
     <li>
@@ -45,4 +37,4 @@
         </ul>
     </li>
     
-</ul>	
+</ul>

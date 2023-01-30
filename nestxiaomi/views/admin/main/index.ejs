@@ -1,26 +1,19 @@
-<!--
- * @Author: chenxiao chenxiao@uino.com
- * @Date: 2022-11-12 15:21:26
- * @LastEditors: chenxiao chenxiao@uino.com
- * @LastEditTime: 2022-11-19 14:54:25
- * @FilePath: \nestJS\nestxiaomi\views\admin\main\index.ejs
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
-<%- include ('../public/page_heder.ejs')%>
+<%- include ('../public/page_header.ejs')%>
+
 <%- include ('../public/page_nav.ejs')%>
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
-            <%- include ('../public/page_aside.ejs')%>
-			
+            <%- include ('../public/page_aside.ejs')%>		
           
         </div>
         <div class="col-sm-10">
-           
-            <iframe name="rightMain" id="rightMain" src="/admin/main/welcome" frameborder="false" scrolling="auto" width="100%">
+            <iframe name="rightMain" id="rightMain" src="/<%=config.adminPath%>/main/welcome" frameborder="false" scrolling="auto" width="100%" height="500">
 
+                
+            </iframe>
         </div>
     </div>
 </div>
