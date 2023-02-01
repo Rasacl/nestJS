@@ -9,6 +9,7 @@ var app={
 	init:function(){
 		this.slideToggle();
 		this.resizeIframe();
+		this.confirmDelete()
 
 	},
 	resizeIframe:function(){
@@ -24,6 +25,15 @@ var app={
 						
 					
 					$(this).siblings('ul').slideToggle();
+		})
+	},
+
+	//提示是否删除
+	confirmDelete() {
+		$('.delete').click(function () {
+			
+		let flag = confirm("您确定要删除吗?")
+		return flag
 		})
 	}
 
