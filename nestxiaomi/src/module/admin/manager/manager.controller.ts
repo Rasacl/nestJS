@@ -1,4 +1,4 @@
-import { Body, Controller,Get, Post, Render, Response } from '@nestjs/common';
+import { Body, Controller,Get, Post, Query, Render, Response } from '@nestjs/common';
 import { Config } from '../../../config/config'
 
 import { ToolsService } from '../../../service/tools/tools.service'
@@ -54,9 +54,46 @@ export class ManagerController {
 
     @Get('edit')
     @Render('admin/manager/edit')
-    edit(){
+    async edit(@Query() query) {
+        let adminResult = await this.adminService.find({ "_id": query.id })
+        let roleList = await this.roleService.find()
+        return {
+            adminResult: adminResult[0],
+            roleList: roleList
+        };
+    }
 
-        return {};
+    @Post("doEdit")
+    async doEdit(@Body() body, @Response() res) {
+        let id = body._id
+        let password = body.password
+        let mobile = body.mobile
+        let email = body.email
+        let role_id = body.role_id
+        if (password != '') {
+            if (password.length < 6) {
+                this.toolsService.error(res, '密码长度不合法', `/${Config.adminPath}/manager/edit?id=${id}`)
+                return
+            } else {
+                password = this.toolsService.getMd5(password)
+                await this.adminService.update({ '_id': id }, {
+                    mobile,email,role_id,password
+                })
+            }
+        } else {
+           await this.adminService.update({ '_id': id }, {
+                mobile,
+                email,
+                role_id
+            })
+        }
+        this.toolsService.success(res,`/${Config.adminPath}/manager`)
+    }
+
+    @Get('delete')
+    async delete(@Query() query, @Response() res) {
+        let result = this.adminService.delete({ '_id': query.id })
+        this.toolsService.success(res,`/${Config.adminPath}/manager`)
     }
 
 }

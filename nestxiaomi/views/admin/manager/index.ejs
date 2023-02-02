@@ -24,7 +24,7 @@
                                 <td><%=adminResult[i].mobile%></td>
                                 <td><%=adminResult[i].email%></td>
                                 <td><%=adminResult[i].role[0].title%></td>                      
-                                <td class="text-center"><a href="/<%=config.adminPath%>/manager/edit?id=<%=adminResult[i]._id%>">修改</a> 　<a class="" href="/<%=config.adminPath%>/manager/delete?id=<%=adminResult[i]._id%>">删除</a></td>
+                                <td class="text-center"><a href="/<%=config.adminPath%>/manager/edit?id=<%=adminResult[i]._id%>">修改</a> 　<a class="delete" href="/<%=config.adminPath%>/manager/delete?id=<%=adminResult[i]._id%>">删除</a></td>
                             </tr>       
                         <%}%>
                     </tbody>
