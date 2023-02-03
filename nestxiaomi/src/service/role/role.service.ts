@@ -44,4 +44,8 @@ export class RoleService {
         }
     }
 
+    getModel() {
+        return this.roleModel
+    }
+
 }

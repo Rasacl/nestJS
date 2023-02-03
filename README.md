@@ -1,11 +1,4 @@
-<!--
- * @Author: chenxiao chenxiao@uino.com
- * @Date: 2022-10-11 17:07:51
- * @LastEditors: chenxiao chenxiao@uino.com
- * @LastEditTime: 2022-10-22 16:26:34
- * @FilePath: \nestJS\README.md
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
+
 # nestJS
 
 # nestdome01
@@ -41,3 +34,28 @@ nest中的模块
 # nest_guard
 
 nest中的守卫
+
+
+# nestxiaomi
+
+config  全局变量
+helper 全局方法
+
+interface 接口
+middleware 中间件
+
+module 模块
+     role 角色模块
+     access 权限模块
+     login 登录模块
+     manager 管理员模块
+schema 校验
+
+service 服务
+    access 权限服务
+    admin 登录服务
+    role 角色服务
+    role_access 权限放置中间表服务
+    tools 公用方法服务
+
+view  视图 静态模板
