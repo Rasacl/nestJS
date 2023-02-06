@@ -13,6 +13,6 @@ export const AdminSchema = new mongoose.Schema({
     type:Number,        
     default: d.getTime()
   },
-  is_super: { type:Number}
+  is_super: { type:Number,default:0}
 });
 

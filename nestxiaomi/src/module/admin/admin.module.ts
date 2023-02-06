@@ -5,6 +5,7 @@ import { LoginController } from './login/login.controller';
 import { ManagerController } from './manager/manager.controller';
 import { RoleController } from './role/role.controller';
 import { AccessController } from './access/access.controller';
+import { FocusController } from './focus/focus.controller'
 
 import { MongooseModule } from '@nestjs/mongoose';
 
@@ -17,7 +18,7 @@ import { AdminService } from '../../service/admin/admin.service';
 import {RoleService} from '../../service/role/role.service'
 import { ToolsService } from '../../service/tools/tools.service';
 import { AccessService } from '../../service/access/access.service'
-import { RoleAccessService } from '../../service/role-access/role-access.service'
+import { RoleAccessService } from '../../service/role-access/role-access.service';
 
 @Module({
   imports:[
@@ -28,7 +29,8 @@ import { RoleAccessService } from '../../service/role-access/role-access.service
       { name: 'RoleAccess', schema: RoleAccessSchema, collection: "role_access" },
     ])
   ],
-  controllers: [MainController, LoginController, ManagerController, RoleController, AccessController],
-  providers:[ToolsService,AdminService,RoleService,AccessService,RoleAccessService]
+  controllers: [MainController, LoginController, ManagerController, RoleController, AccessController, FocusController],
+  providers: [ToolsService, AdminService, RoleService, AccessService, RoleAccessService],
+  exports:[AdminService, RoleService, AccessService, RoleAccessService]
 })
 export class AdminModule {}

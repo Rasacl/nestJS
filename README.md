@@ -49,6 +49,7 @@ module 模块
      access 权限模块
      login 登录模块
      manager 管理员模块
+     focus 轮播图模块
 schema 校验
 
 service 服务
@@ -59,3 +60,5 @@ service 服务
     tools 公用方法服务
 
 view  视图 静态模板
+
+超级管理员 账号:admin  密码:123456
