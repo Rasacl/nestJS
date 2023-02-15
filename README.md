@@ -50,6 +50,7 @@ module 模块
      login 登录模块
      manager 管理员模块
      focus 轮播图模块
+     main  公共模块
 schema 校验
 
 service 服务

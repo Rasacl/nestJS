@@ -33,4 +33,4 @@ NewsController = __decorate([
     common_1.Controller('news')
 ], NewsController);
 exports.NewsController = NewsController;
-//# sourceMappingURL=news.controller.js.map
+//# sourceMappingURL=news.controller.js.map 

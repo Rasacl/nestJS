@@ -52,7 +52,7 @@ export class ToolsService {
       3 实现上传
       4 返回图片保存的地址
      */
-        
+        if (file) {
         let day = format(new Date(), 'YYMMDD')  //目录名称
         let d = this.getTime()  //时间戳 当前图片名称
         let dir = join(__dirname, `../../../public/${Config.uploadDir}`, day)
@@ -64,6 +64,9 @@ export class ToolsService {
         let saveDir = join(`${Config.uploadDir}`, day, d + extname(file.originalname))
         
         return saveDir
+        } else {
+            return ''
+        }
 
      }
 
